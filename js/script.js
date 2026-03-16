@@ -1,5 +1,5 @@
 // Spil parameterne 
-let visStartSide = true;
+let visStartside = true;
 let score = 0;
 let maxScore = 100;
 
@@ -7,15 +7,31 @@ if(score === maxScore){
     gameCompleted();
     }
 
-function updateProgress(){
+function updateProgressbar(){
     
 }
 
 function removeTrash(trashElement){
  trashElement.remove();
  score += 20;
- updateProgress();
+ updateProgressbar();
 }
-//Layout af skærmen 
+
+
+//Layout af baggrunden 
 function setup(){
 }
+
+
+// Bobler 
+
+
+
+
+//Slutningen på spilet 
+function visSlutspil(){
+
+    document.getElementById("storyBox").innerText =
+    "Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.";
+    
+    }
