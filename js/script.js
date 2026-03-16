@@ -31,7 +31,11 @@ function setup(){
     }
 
 
-// Bobler 
+// BOBLER
+// Draw the bubble
+fill(150, 100, 200, 150); // Soft purple with transparency
+ellipse(c.x, c.y, c.size);
+
 
 //Lyd
 function playBubbleSound(){
