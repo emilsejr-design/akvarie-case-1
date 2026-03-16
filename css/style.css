@@ -45,9 +45,8 @@
 
 
 .start_game{
-    position: absolute;
-    margin-top: 50%;
-    margin-right: 50%;
+    display: flex;
+    justify-content: center;
     border-color: black;
     background-color: black;
     color: white;

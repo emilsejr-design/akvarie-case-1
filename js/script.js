@@ -1,21 +1,8 @@
-// Spil parameterne 
+// GAME PARAMETERS
 let visStartside = true;
 let score = 0;
 let maxScore = 100;
 
-if(score === maxScore){
-    gameCompleted();
-    }
-
-function updateProgressbar(){
-    }
-
-
-function removeTrash(trashElement){
-    trashElement.remove();
-    score += 20;
-    updateProgressbar();
-    }
 
 // Indlæser baggrunden før alt andet sker.
 function preload() { 
@@ -32,21 +19,32 @@ function setup(){
 
 
 // BOBLER
-// Draw the bubble
-fill(150, 100, 200, 150); // Soft purple with transparency
+fill(150, 100, 200, 150); // Draw the bubble - Soft purple with transparency
 ellipse(c.x, c.y, c.size);
 
 
-//Lyd
+//LYDE
 function playBubbleSound(){
     let sound = new Audio("bubble.mp3");
     sound.play();
     }
 
-//Progressbaren 
+//PROGRESSBAR
+if(score === maxScore){
+    gameCompleted();
+    }
 
+function updateProgressbar(){
+    }
 
-//End of game
+//TRASH
+function removeTrash(trashElement){
+    trashElement.remove();
+    score += 20;
+    updateProgressbar();
+    }
+
+//END OF GAME
 function gameCompleted(){
     alert("Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.");
     showEndStory();
