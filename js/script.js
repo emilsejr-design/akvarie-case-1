@@ -8,30 +8,42 @@ if(score === maxScore){
     }
 
 function updateProgressbar(){
-    
-}
+    }
+
 
 function removeTrash(trashElement){
- trashElement.remove();
- score += 20;
- updateProgressbar();
-}
+    trashElement.remove();
+    score += 20;
+    updateProgressbar();
+    }
 
+// Indlæser baggrunden før alt andet sker.
+function preload() { 
+    bgImage = loadImage("background.jpg");
+    }
 
 //Layout af baggrunden 
 function setup(){
-}
+    createCanvas(bgImage.width, bgImage.height);
+    textFont("Arial");
+    textSize(20);
+    textAlign(LEFT, TOP);
+    }
 
 
 // Bobler 
 
+//Lyd
+function playBubbleSound(){
+    let sound = new Audio("bubble.mp3");
+    sound.play();
+    }
+
+//Progressbaren 
 
 
-
-//Slutningen på spilet 
-function visSlutspil(){
-
-    document.getElementById("storyBox").innerText =
-    "Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.";
-    
+//End of game
+function gameCompleted(){
+    alert("Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.");
+    showEndStory();
     }
