@@ -17,15 +17,13 @@ function setup(){
     textAlign(LEFT, TOP);
     }
 
-
 // BOBLER
 fill(150, 100, 200, 150); // Draw the bubble - Soft purple with transparency
 ellipse(c.x, c.y, c.size);
 
-
 //LYDE
 function playBubbleSound(){
-    let sound = new Audio("bubble.mp3");
+    let sound = new Audio("......");
     sound.play();
     }
 
