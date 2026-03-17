@@ -12,7 +12,6 @@
     --font-size-xxl: 28px;
 
     --text-color: white;
-
 }
 
 .header{
@@ -36,8 +35,8 @@
 }
 
 .mission{
-    font-family: serif;
     font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .header{
