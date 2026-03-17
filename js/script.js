@@ -47,3 +47,16 @@ function gameCompleted(){
     alert("Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.");
     showEndStory();
     }
+
+
+    //når man klikker på fisken skal der gerne komme en lyd 
+   const fisk = document.getElementById('hero_fish');
+const lyd = document.getElementById('heltelyd');
+
+fisk.addEventListener('click', () => {
+    console.log("Fisken blev klikket!"); // Tjekker om klikket overhovedet registreres
+    lyd.currentTime = 0; // Spoler tilbage så man kan klikke flere gange
+    lyd.play().catch(error => {
+        console.error("Fejl ved afspilning:", error);
+    });
+});
