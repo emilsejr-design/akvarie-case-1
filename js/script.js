@@ -17,12 +17,25 @@ function updateProgressbar(){
 //LAYOUT - Viewport
 const leftButton = document.getElementById("leftButton");
 const rightButton = document.getElementById("rightButton");
-const 
-const container = document.querySelector("background_move_around");
+const background = document.querySelector(".background_move_around");
 
-let currentPosition = 0; // Hvor vi er i viewport
-const step = window.innerWidth; // Flyt 1 skærmbredde ad gangen
-const maxPosition = 
+let currentPosition = 0;
+const step = window.innerWidth; // flyt 1 skærmbredde ad gangen
+const maxPosition = (background.offsetWidth - window.innerWidth); // max til højre
+
+// Flyt til venstre
+leftButton.addEventListener("click", () => {
+    currentPosition -= step;
+    if (currentPosition < 0) currentPosition = 0;
+    background.style.transform = `translateX(-${currentPosition}px)`;
+});
+
+// Flyt til højre
+rightButton.addEventListener("click", () => {
+    currentPosition += step;
+    if (currentPosition > maxPosition) currentPosition = maxPosition;
+    background.style.transform = `translateX(-${currentPosition}px)`;
+});
 
 
 // BOBLER
