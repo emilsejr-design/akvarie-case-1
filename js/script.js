@@ -15,8 +15,8 @@ function updateProgressbar(){
 
 // BOBLER
 function createBubble() {
-    const bubble = document.createElement("div");
-    bubble.classList.add("bubble");
+    const bubble = document.createElement("div"); //Opret et nyt div-element, som bliver en boble
+    bubble.classList.add("bubble"); //Tilføjer CSS-klassen "bubble", som styrer udseende og animation
 
     // Giver dem random størrelse
     const size = Math.random() * 20 + 10; 
