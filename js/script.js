@@ -13,6 +13,10 @@ function updateProgressbar(){
     }
 }
 
+const leftButton = 
+const rightButton = 
+const background_move_around = 
+
 // BOBLER
 function createBubble() {
     const bubble = document.createElement("div"); //Opret et nyt div-element, som bliver en boble
