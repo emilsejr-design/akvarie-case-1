@@ -15,7 +15,7 @@ function updateProgressbar(){
 
 //LAYOUT - Viewport
 let currentPosition = 0;
-const step = 200; // hvor mange pixels vi flytter pr klik
+const step = 500; // hvor mange pixels vi flytter pr klik
 const background = document.querySelector(".background_move_around");
 
 // Max/min grænser (så vi ikke rykker ud af baggrunden)
