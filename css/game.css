@@ -127,21 +127,55 @@ body, game.html {
     display: block !important; /* Tvinger den til at blive vist */
 }
 
+/* FISK MED SKRALD */
+#fish1 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 80%;
+    bottom: -120px;
+    scale: 30%;
+}
+#fish2 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 30%;
+    bottom: -70px;
+    scale: 30%;
+}
+#skraldepose1 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 80%;
+    bottom: -190px;
+    scale: 30%;
+    rotate: 70deg;
+}
+#skraldepose2 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 30%;
+    bottom: -390px;
+    scale: 30%;
+}
+
 /* SEAWEED */
 #seaweed_1{
     position: absolute;
     width: 20%;
     z-index: 0;
     left: 50%;
-    bottom: -40px;
+    bottom: -300px;
+    scale: 30%;
 }
 #seaweed_3{
     position: absolute;
     width: 20%;
     z-index: 0;
     left: 10%;
-    bottom: -40px;
+    bottom: -200px;
+    scale: 30%;
 }
-
-.trashFish
-
