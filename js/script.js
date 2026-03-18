@@ -33,8 +33,9 @@ function move(direction) {
 
     background.style.transform = `translateX(-${currentPosition}px)`;
 }
-
-
+//Knappernes funktion
+document.getElementById("leftButton").addEventListener("click", () => move('left'));
+document.getElementById("rightButton").addEventListener("click", () => move('right'));
 
 // BOBLER
 function createBubble() {

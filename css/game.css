@@ -19,6 +19,8 @@ body, game.html {
 
 .background_move_around {
     position: absolute;
+    width: 300vw;
+    height: 100vh;
     transition: transform 0.5s ease;
     display: flex; 
 }
@@ -120,8 +122,8 @@ body, game.html {
     position: absolute;
     width: 120px; 
     /* Vi placerer den manuelt her for at tjekke om den dukker op */
-    bottom: 50px; 
-    left: 100px;
+    bottom: 50%; 
+    left: 20%;
     z-index: 999; /* Meget højt tal så den altid er forrest */
     display: block !important; /* Tvinger den til at blive vist */
 }
