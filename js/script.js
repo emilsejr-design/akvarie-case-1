@@ -80,22 +80,22 @@ function playBubbleSound(){
     }
     addEventListener("click", playSoundHeroFish);
 
+
+
+
 // TRASH
-// henter skraldeposerne
-const skraldepose1 = document.getElementById("skraldepose1");
-const skraldepose2 = document.getElementById("skraldepose2");
+const altSkrald = document.querySelectorAll(".altSkrald")
 // laver funktion der kan fjerne elementer og opdatere progressbar
 function fjernSkrald(e) {
     e.target.remove();
     score += 20;
     updateProgressbar();
 }
-// ved klik på skraldeposerne køres funktionen der fjerner skrald
-skraldepose1.addEventListener("click", fjernSkrald)
-skraldepose2.addEventListener("click", fjernSkrald)
+// laver forEach med arrox-funktion
+altSkrald.forEach(skrald => {
+    skrald.addEventListener("click", fjernSkrald);
 
-
-
+})
 
 //KRABBE
 // --- FISK & KRABBE ANIMATION ---
