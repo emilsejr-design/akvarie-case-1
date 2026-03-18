@@ -87,10 +87,10 @@ body, game.html {
     z-index: 2;
     transition: transform 0.3s
 }
-/* Hover effekt */
-#leftButton:hover, #rightButton:hover{
-    transform: translateY(-50%), scale(1.2);
-}
+    /* Hover effekt */
+    #leftButton:hover, #rightButton:hover{
+        transform: translateY(-50%), scale(1.2);
+    }
 
 /* FISK */
 #fish_1 {
