@@ -14,8 +14,12 @@
 <!-- PORGRESSBAR -->
 <div id="progressContainer"></div>
 <progress id="progressBar" value="0" max="100"></progress> <!-- OBS itvivl om "progress" virker eller om vi skal bruge div--> -->
-    
-<!-- TRASH OBJEKTER -->
+
+<!-- NAVIGATIONSPILE -->
+ <button id="leftButton">⬅️</button>
+ <button id="rightBtn">➡️</button>
+
+
 <div class="trash" onclick="removeTrash(this)"></div>
         <div class="trash" onclick="removeTrash(this)"></div>
         <div class="trash" onclick="removeTrash(this)"></div>
@@ -24,11 +28,11 @@
 <img src="img/plasticbag.img" class="trash" onclick="removeTrash(This) ">
 
 <!-- BAGGRUNDEN -->
-    <img src="fish.png"  class="fishReaction(this)">
-<header class="background">
-    <img src="img/game_background.jpg" alt="background">
-    <img id="fish_1" src="img/fish_1.png" alt="fish 1">
-</header>
+   <main class="background-container">
+        <img src="img/game_background.jpg" class="bg-img" alt="background">
+        
+        <img id="fish_1" src="img/fish_1.png" alt="fish 1">
+    </main>
 
 <!-- Slutside tekst -->
 <div id="slutTekst"></div>

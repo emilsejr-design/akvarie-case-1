@@ -56,26 +56,32 @@ function removeTrash(trashElement){
 
 
 
+const fish = document.getElementById("fish_1");
+let x = 0;
+let y = 300; // Start position i højden
 let speed = 2;
 
 function swim() {
-  x += speed;
+    x += speed;
 
-  // Vend når kanten rammes
-  if (x > window.innerWidth - 100 || x < 0) {
-    speed *= -1;
-    fish.style.transform = speed > 0 ? "scaleX(1)" : "scaleX(-1)";
-  }
+    // Vend når kanten rammes (150 er fiskens bredde)
+    if (x > window.innerWidth - 150 || x < 0) {
+        speed *= -1;
+        // Spejlvend fisken så den kigger den vej den svømmer
+        fish.style.transform = speed > 0 ? "scaleX(1)" : "scaleX(-1)";
+    }
 
-  // Blød svømmebevægelse
-  y += Math.sin(x * 0.05);
+    // Blød bølgebevægelse (Sinus-kurve)
+    // Vi lægger Math.sin til den nuværende y-position
+    let waveY = y + Math.sin(x * 0.02) * 30; 
 
-  fish.style.left = x + "px";
-  fish.style.top = y + "px";
+    fish.style.left = x + "px";
+    fish.style.top = waveY + "px";
 
-  requestAnimationFrame(swim);
+    requestAnimationFrame(swim);
 }
 
+// Start animationen
 swim();
 
 

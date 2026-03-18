@@ -36,7 +36,7 @@
     }
 }
 /* Sørger for at spil elementerne er ovenpå boblerne*/
-#trash, #progressContainer, #slutTekst {
+#trash, #progressContainer, #slutTekst, #fish_1{
     position: relative;
     z-index: 1;
 }
@@ -59,15 +59,49 @@
     transition: width 0.3s;
 }
 
-body {
-  margin: 0;
-  overflow: hidden;
-  background-color: #87CEEB; /* vand */
+/* NAVIGATIONS KNAPPER */
+#leftBtn {
+    left: 20px;
+}
+#rightBtn {
+    right: 20px;
+}
+#leftBtn, #rightBtn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    padding: 10px;
+    background: rgba(255,255,255,0.5);
+    border: none;
+    cursor: pointer;
+    z-index: 2;
 }
 
-#fish {
-  position: absolute;
-  width: 100px;
-  pointer-events: none;
-  transition: transform 0.2s;
+
+body, game.html {
+    margin: 0;
+    overflow: hidden; /* Undgår scrollbars når fisken svømmer */
+    height: 100%;
+}
+
+.background-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#fish_1 {
+    position: absolute;
+    width: 150px; /* Juster størrelsen her */
+    top: 50%;
+    left: 0;
+    transition: transform 0.2s ease;
+    z-index: 10;
 }
