@@ -3,10 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.background img{
-    height:100vh;
-    
+/* LAYOUT */
+body, game.html {
+    margin: 0;
+    overflow: hidden; /* Undgår scrollbars når fisken svømmer */
+    height: 100%;
+}
+#backgroundPic {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
 }
 
 /* BOBLER I BAGGRUNDEN */
@@ -36,7 +44,7 @@
     }
 }
 /* Sørger for at spil elementerne er ovenpå boblerne*/
-#trash, #progressContainer, #slutTekst, #fish_1{
+#trash, #progressContainer, #slutTekst, #leftButton,#rightButton {
     position: relative;
     z-index: 1;
 }
@@ -82,34 +90,14 @@
 /* Hover effekt */
 #leftButton:hover, #rightButton:hover{
     transform: translateY(-50%), scale(1.2);
-
 }
 
-
-body, game.html {
-    margin: 0;
-    overflow: hidden; /* Undgår scrollbars når fisken svømmer */
-    height: 100%;
-}
-
-.background-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-}
-
-.bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* FISK */
 #fish_1 {
     position: absolute;
     width: 150px; /* Juster størrelsen her */
     top: 50%;
     left: 0;
     transition: transform 0.2s ease;
-    z-index: 10;
+    z-index: 0;
 }
