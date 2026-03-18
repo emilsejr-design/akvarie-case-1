@@ -68,34 +68,35 @@ setInterval(createBubble, 300);
 
 //LYD
 function playBubbleSound(){
-    let sound = new Audio("sfx-bubbles.mp3");
+    let sound = new Audio("mp3/sfx-bubbles.mp3");
     sound.play();
     }
 
     // Lyd på FortællerFisken på forsiden
+    const forsideFisk = document.getElementById("hero_fish");
     const heroFishSpeak = document.getElementById("heltelyd");
     function playSoundHeroFish() {
         heroFishSpeak.currentTime = 0;
         heroFishSpeak.play();
     }
-    addEventListener("click", playSoundHeroFish);
-
-
+    forsideFisk.addEventListener("click", playSoundHeroFish);
 
 
 // TRASH
-const altSkrald = document.querySelectorAll(".altSkrald")
+// henter skraldeposerne
+const skraldepose1 = document.getElementById("skraldepose1");
+const skraldepose2 = document.getElementById("skraldepose2");
 // laver funktion der kan fjerne elementer og opdatere progressbar
 function fjernSkrald(e) {
     e.target.remove();
     score += 20;
     updateProgressbar();
+    console.log("fjernskraldfunktiomnen");
 }
-// laver forEach med arrox-funktion
-altSkrald.forEach(skrald => {
-    skrald.addEventListener("click", fjernSkrald);
+// ved klik på skraldeposerne køres funktionen der fjerner skrald
+skraldepose1.addEventListener("click", fjernSkrald)
+skraldepose2.addEventListener("click", fjernSkrald)
 
-})
 
 //KRABBE
 // --- FISK & KRABBE ANIMATION ---
