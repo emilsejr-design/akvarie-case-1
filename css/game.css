@@ -81,10 +81,7 @@ body, game.html {
     width: 120px;
     height: 120px;
     background: transparent;
-    display: inline-block;
-    color: aquamarine;
-    border: 3px solid black;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.5), inset -1px -1px 3px rgba(255,255,255,0.3);
+    box-shadow: 2px 2px 6px rgba(44, 43, 43, 0.5), inset -1px -1px 3px rgba(255,255,255,0.3);
     cursor: pointer;
     z-index: 2;
     transition: transform 0.3s
