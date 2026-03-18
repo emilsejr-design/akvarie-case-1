@@ -108,3 +108,11 @@ body, game.html {
     left: 50%;
     bottom: -40px;
 }
+#seaweed_3{
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 10%;
+    bottom: -40px;
+}
+
