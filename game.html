@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<main class="background_move_around">
+<div class="background_move_around">
     <!-- BAGGRUNDEN -->
     <img src="img/game_background.jpg" id="backgroundPic" alt="background">
 
@@ -28,30 +28,21 @@
         <img id="seaweed_1" src="gif/seaweed_1.gif" alt="seaweed_1">
         <img id="seaweed_3" src="gif/seaweed_3.gif" alt="seaweed_3">
     </div>
-</main>
+</div>
 
 <!-- BOBLER -->
 <div id="bubbleContainer"></div>
 
-<!-- PORGRESSBAR -->
-<div id="progressContainer">
-    <div id="progressBar" value="0" max="100"></div> 
-</div>
-
-<!-- NAVIGATIONSPILE -->
- <button id="leftButton">⬅️</button>
- <button id="rightButton">➡️</button>
-
-
-
-
-<div class="trash" onclick="removeTrash(this)"></div>
-        <div class="trash" onclick="removeTrash(this)"></div>
-        <div class="trash" onclick="removeTrash(this)"></div>
+<div class="viewport_layout">
+    <!-- PORGRESSBAR -->
+    <div id="progressContainer">
+        <div id="progressBar" value="0" max="100"></div> 
     </div>
 
-<img src="img/plasticbag.img" class="trash" onclick="removeTrash(this) ">
-
+    <!-- NAVIGATIONSPILE -->
+    <button id="leftButton">⬅️</button>
+    <button id="rightButton">➡️</button>
+</div>
 
 
 

@@ -3,6 +3,7 @@ let visStartside = true;
 let score = 0;
 let maxScore = 100;
 
+
 //Opdater progressbar
 function updateProgressbar(){
     let procent = (score / maxScore) * 100;
@@ -13,9 +14,16 @@ function updateProgressbar(){
     }
 }
 
-const leftButton = 
-const rightButton = 
-const background_move_around = 
+//LAYOUT - Viewport
+const leftButton = document.getElementById("leftButton");
+const rightButton = document.getElementById("rightButton");
+const 
+const container = document.querySelector("background_move_around");
+
+let currentPosition = 0; // Hvor vi er i viewport
+const step = window.innerWidth; // Flyt 1 skærmbredde ad gangen
+const maxPosition = 
+
 
 // BOBLER
 function createBubble() {
