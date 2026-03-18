@@ -28,10 +28,17 @@ body, game.html {
 }
 
 .viewport_layout {
-    position: relative; 
-    width: 100vw;
-    height: 100vh;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
     overflow: hidden;
+    z-index: 100;
+    padding: 20px;
+    pointer-events: none;
+}
+.navButtons, .progressContainer{ 
+   pointer-events: auto; 
 }
 
 
@@ -70,20 +77,15 @@ body, game.html {
 
 /* PROGRESSBAR */
 #progressContainer {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 300px;
-    height: 30px;
+    width: 250px;
+    height: 25px;
     background-color: #ddd;
     border: 2px black;
-    border-radius: 15px;
-    overflow: hidden;
-    z-index: 2;
+    border-radius: 10px;
 }
 #progressBar {
     height: 100%;
-    width: 0%;
+    width: 50%;
     background-color: green;
     transition: width 0.3s;
 }
@@ -107,17 +109,17 @@ body, game.html {
     }
 
 /* FISK */
-#fish_1 {
+#fish_1, #fish-2 {
     position: absolute;
-    width: 150px; /* Juster størrelsen her */
-    top: 50%;
-    left: 0;
+    width: 150px;
     transition: transform 0.2s ease;
-    z-index: 0;
+    z-index: 0; /* Sørg for at de er foran baggrunden */
+    pointer-events: none; /* Så de ikke blokerer for klik på skrald */
 }
-#fish1 {
-    
-}
+
+#fish_1 { top: 50%; }
+#fish-2 { top: 20%; }
+
 
 /* SEAWEED */
 #seaweed_1{

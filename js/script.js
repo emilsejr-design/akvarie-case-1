@@ -96,34 +96,52 @@ skraldepose1.addEventListener("click", fjernSkrald)
 skraldepose2.addEventListener("click", fjernSkrald)
 
 
-//fisk svømmer
-const fish = document.getElementById("fish_1");
-let x = 0;
-let y = 300; // Start position i højden
-let speed = 2;
+// Hent begge fisk ind
+const fish1 = document.getElementById("fish_1");
+const fish2 = document.getElementById("fish-2");
+
+// Start-værdier for fisk 1
+let x1 = 0;
+let y1 = 300;
+let speed1 = 2;
+
+// Start-værdier for fisk 2
+let x2 = 100;
+let y2 = 150;
+let speed2 = -1.5; // Denne svømmer den anden vej fra start
 
 function swim() {
-    x += speed;
-
-    // Vend når kanten rammes (150 er fiskens bredde)
-    if (x > window.innerWidth - 150 || x < 0) {
-        speed *= -1;
-        // Spejlvend fisken så den kigger den vej den svømmer
-        fish.style.transform = speed > 0 ? "scaleX(1)" : "scaleX(-1)";
+    // --- STYR FISK 1 ---
+    x1 += speed1;
+    if (x1 > window.innerWidth - 150 || x1 < 0) {
+        speed1 *= -1;
     }
+    let waveY1 = y1 + Math.sin(x1 * 0.02) * 30;
+    
+    // Brug backticks ` og ${} til transform, så vi både kan flytte og flippe
+    let flip1 = speed1 > 0 ? 1 : -1;
+    fish1.style.left = x1 + "px";
+    fish1.style.top = waveY1 + "px";
+    fish1.style.transform = `scaleX(${flip1})`;
 
-    // Blød bølgebevægelse (Sinus-kurve)
-    // Vi lægger Math.sin til den nuværende y-position
-    let waveY = y + Math.sin(x * 0.02) * 30; 
-
-    fish.style.left = x + "px";
-    fish.style.top = waveY + "px";
+    // --- STYR FISK 2 ---
+    x2 += speed2;
+    if (x2 > window.innerWidth - 150 || x2 < 0) {
+        speed2 *= -1;
+    }
+    let waveY2 = y2 + Math.sin(x2 * 0.01) * 20; // Lidt anden bølge-rytme
+    
+    let flip2 = speed2 > 0 ? 1 : -1;
+    fish2.style.left = x2 + "px";
+    fish2.style.top = waveY2 + "px";
+    fish2.style.transform = `scaleX(${flip2})`;
 
     requestAnimationFrame(swim);
 }
 
-// Start animationen
+// Start festen!
 swim();
+
 
 
 //Slutningen af spilet 
