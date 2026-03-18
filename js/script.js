@@ -41,8 +41,6 @@ function createBubble() {
 setInterval(createBubble, 300);
 
 
-
-
 //LYD
 function playBubbleSound(){
     let sound = new Audio("bubble.mp3");
@@ -56,8 +54,6 @@ function playBubbleSound(){
         heroFishSpeak.play();
     }
     addEventListener("click", playSoundHeroFish);
-
-
 
 // TRASH
 function removeTrash(trashElement){
