@@ -11,7 +11,7 @@ body, game.html {
 }
 #backgroundPic {
     position: relative;
-    width: 100vw;
+    width: 1000vw;
     height: 100vh;
     object-fit: cover;
     z-index: -1;
@@ -143,4 +143,6 @@ body, game.html {
     left: 10%;
     bottom: -40px;
 }
+
+.trashFish
 
