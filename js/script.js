@@ -94,6 +94,9 @@ function fjernSkrald(e) {
 skraldepose1.addEventListener("click", fjernSkrald)
 skraldepose2.addEventListener("click", fjernSkrald)
 
+
+
+
 //KRABBE
 // --- FISK & KRABBE ANIMATION ---
 
