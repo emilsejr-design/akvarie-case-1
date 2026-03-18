@@ -124,7 +124,7 @@ body, game.html {
     /* Vi placerer den manuelt her for at tjekke om den dukker op */
     bottom: 50%; 
     left: 20%;
-    z-index: 999; /* Meget højt tal så den altid er forrest */
+    z-index: 99; /* Meget højt tal så den altid er forrest */
     display: block !important; /* Tvinger den til at blive vist */
 }
 
