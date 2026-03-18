@@ -9,14 +9,6 @@ body, game.html {
     overflow: hidden; /* Undgår scrollbars når fisken svømmer */
     height: 100%;
 }
-#backgroundPic {
-    position: relative;
-    width: 1000vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-}
-
 .background_move_around {
     position: absolute;
     width: 300vw;
@@ -24,13 +16,20 @@ body, game.html {
     transition: transform 0.5s ease;
     display: flex; 
 }
+#backgroundPic {
+    position: relative;
+    width: 1000vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
 
 .viewport_layout {
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    overflow: hidden;
+    height: 100%;
     z-index: 100;
     padding: 20px;
     pointer-events: none;
