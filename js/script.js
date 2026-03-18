@@ -1,62 +1,86 @@
-// GAME PARAMETERS
+// Spil parameterne 
 let visStartside = true;
 let score = 0;
 let maxScore = 100;
 
+//Opdater progressbar
+function updateProgressbar(){
+    let procent = (score / maxScore) * 100;
+    document.getElementById("progressBar").style.width = procent + "%";
 
-// Indlæser baggrunden før alt andet sker.
-function preload() { 
-    bgImage = loadImage("background.jpg");
+    if(score >= maxScore){  // Når spillet er færdigt
+    visSlutside();
     }
-
-//Layout af baggrunden 
-function setup(){
-    createCanvas(bgImage.width, bgImage.height);
-    textFont("Arial");
-    textSize(20);
-    textAlign(LEFT, TOP);
-    }
+}
 
 // BOBLER
-fill(150, 100, 200, 150); // Draw the bubble - Soft purple with transparency
-ellipse(c.x, c.y, c.size);
+function createBubble() {
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
 
-//LYDE
+    // Giver dem random størrelse
+    const size = Math.random() * 20 + 10; 
+    bubble.style.width = size + "px";
+    bubble.style.height = size + "px";
+
+    // Giver dem random position
+    bubble.style.left = Math.random() * window.innerWidth + "px";
+
+    // Så de stiger med random hastighed
+    const duration = Math.random() * 5 + 5;
+    bubble.style.animationDuration = duration + "s";
+
+    document.getElementById("bubbleContainer").appendChild(bubble);
+
+    // Fjern boblen efter animation
+    setTimeout(() => {
+        bubble.remove();
+    }, duration * 1000);
+}
+// Lav mange bobler løbende
+setInterval(createBubble, 300);
+
+
+//LYD
 function playBubbleSound(){
-    let sound = new Audio("......");
+    let sound = new Audio("bubble.mp3");
     sound.play();
     }
 
-//PROGRESSBAR
-if(score === maxScore){
-    gameCompleted();
-    }
-
-function updateProgressbar(){
-    }
-
-//TRASH
+// TRASH
 function removeTrash(trashElement){
     trashElement.remove();
     score += 20;
     updateProgressbar();
+}
+
+
+
+let speed = 2;
+
+function swim() {
+  x += speed;
+
+  // Vend når kanten rammes
+  if (x > window.innerWidth - 100 || x < 0) {
+    speed *= -1;
+    fish.style.transform = speed > 0 ? "scaleX(1)" : "scaleX(-1)";
+  }
+
+  // Blød svømmebevægelse
+  y += Math.sin(x * 0.05);
+
+  fish.style.left = x + "px";
+  fish.style.top = y + "px";
+
+  requestAnimationFrame(swim);
+}
+
+swim();
+
+
+//Slutningen af spilet 
+function visSlutside(){
+    document.getElementById("slutTekst").innerText =
+    "Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.";
     }
-
-//END OF GAME
-function gameCompleted(){
-    alert("Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.");
-    showEndStory();
-    }
-
-
-    //når man klikker på fisken skal der gerne komme en lyd 
-   const fisk = document.getElementById('hero_fish');
-const lyd = document.getElementById('heltelyd');
-
-fisk.addEventListener('click', () => {
-    console.log("Fisken blev klikket!"); // Tjekker om klikket overhovedet registreres
-    lyd.currentTime = 0; // Spoler tilbage så man kan klikke flere gange
-    lyd.play().catch(error => {
-        console.error("Fejl ved afspilning:", error);
-    });
-});

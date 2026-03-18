@@ -7,13 +7,31 @@
     <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
-    
-    <img src="img/plasticbag.img" class="trash" onclick="removeTrash(This) ">
 
+<!-- BOBLER -->
+    <div id="bubbleContainer"></div>
+
+<!-- PORGRESSBAR -->
+<div id="progressContainer"></div>
+<progress id="progressBar" value="0" max="100"></progress> <!-- OBS itvivl om "progress" virker eller om vi skal bruge div--> -->
+    
+<!-- TRASH OBJEKTER -->
+<div class="trash" onclick="removeTrash(this)"></div>
+        <div class="trash" onclick="removeTrash(this)"></div>
+        <div class="trash" onclick="removeTrash(this)"></div>
+    </div>
+
+<img src="img/plasticbag.img" class="trash" onclick="removeTrash(This) ">
+
+<!-- BAGGRUNDEN -->
     <img src="fish.png"  class="fishReaction(this)">
 <header class="background">
     <img src="img/game_background.jpg" alt="background">
+    <img id="fish_1" src="img/fish_1.png" alt="fish 1">
 </header>
+
+<!-- Slutside tekst -->
+<div id="slutTekst"></div>
 
     <script src="js/script.js"></script>
 </body>
