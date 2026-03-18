@@ -41,11 +41,23 @@ function createBubble() {
 setInterval(createBubble, 300);
 
 
+
+
 //LYD
 function playBubbleSound(){
     let sound = new Audio("bubble.mp3");
     sound.play();
     }
+
+    // Lyd på FortællerFisken på forsiden
+    const heroFishSpeak = document.getElementById("heltelyd");
+    function playSoundHeroFish() {
+        heroFishSpeak.currentTime = 0;
+        heroFishSpeak.play();
+    }
+    addEventListener("click", playSoundHeroFish);
+
+
 
 // TRASH
 function removeTrash(trashElement){
