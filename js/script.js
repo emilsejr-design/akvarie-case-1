@@ -3,7 +3,6 @@ let visStartside = true;
 let score = 0;
 let maxScore = 100;
 
-
 //Opdater progressbar
 function updateProgressbar(){
     let procent = (score / maxScore) * 100;
@@ -15,27 +14,26 @@ function updateProgressbar(){
 }
 
 //LAYOUT - Viewport
-const leftButton = document.getElementById("leftButton");
-const rightButton = document.getElementById("rightButton");
+let currentPosition = 0;
+const step = 200; // hvor mange pixels vi flytter pr klik
 const background = document.querySelector(".background_move_around");
 
-let currentPosition = 0;
-const step = window.innerWidth; // flyt 1 skærmbredde ad gangen
-const maxPosition = (background.offsetWidth - window.innerWidth); // max til højre
+// Max/min grænser (så vi ikke rykker ud af baggrunden)
+const maxPosition = background.scrollWidth - window.innerWidth;
 
-// Flyt til venstre
-leftButton.addEventListener("click", () => {
-    currentPosition -= step;
-    if (currentPosition < 0) currentPosition = 0;
-    background.style.transform = `translateX(-${currentPosition}px)`;
-});
+function move(direction) {
+    if (direction === 'left'){
+        currentPosition -= step; // venstre = negativ bevægelse
+    } else if (direction === 'right'){
+        currentPosition += step; // højre = positiv bevægelse
+    }
+    
+    // Sørger for at vi ikke går ud over grænserne
+    currentPosition = Math.max(0, Math.min(currentPosition, maxPosition))
 
-// Flyt til højre
-rightButton.addEventListener("click", () => {
-    currentPosition += step;
-    if (currentPosition > maxPosition) currentPosition = maxPosition;
     background.style.transform = `translateX(-${currentPosition}px)`;
-});
+}
+
 
 
 // BOBLER
@@ -95,51 +93,68 @@ function fjernSkrald(e) {
 skraldepose1.addEventListener("click", fjernSkrald)
 skraldepose2.addEventListener("click", fjernSkrald)
 
+//KRABBE
+// --- FISK & KRABBE ANIMATION ---
 
-// Hent begge fisk ind
+// 1. Hent elementerne
 const fish1 = document.getElementById("fish_1");
 const fish2 = document.getElementById("fish-2");
+const crab = document.getElementById("crab");
 
-// Start-værdier for fisk 1
+// 2. Start-værdier for Fisk 1
 let x1 = 0;
 let y1 = 300;
 let speed1 = 2;
 
-// Start-værdier for fisk 2
+// 3. Start-værdier for Fisk 2
 let x2 = 100;
 let y2 = 150;
-let speed2 = -1.5; // Denne svømmer den anden vej fra start
+let speed2 = -1.5;
+
+// 4. Start-værdier for Krabben
+let crabX = 200;
+let crabSpeed = 1.2;
+let crabStep = 0;
 
 function swim() {
     // --- STYR FISK 1 ---
-    x1 += speed1;
-    if (x1 > window.innerWidth - 150 || x1 < 0) {
-        speed1 *= -1;
+    if (fish1) {
+        x1 += speed1;
+        if (x1 > window.innerWidth - 150 || x1 < 0) speed1 *= -1;
+        let waveY1 = y1 + Math.sin(x1 * 0.02) * 30;
+        fish1.style.left = x1 + "px";
+        fish1.style.top = waveY1 + "px";
+        fish1.style.transform = `scaleX(${speed1 > 0 ? 1 : -1})`;
     }
-    let waveY1 = y1 + Math.sin(x1 * 0.02) * 30;
-    
-    // Brug backticks ` og ${} til transform, så vi både kan flytte og flippe
-    let flip1 = speed1 > 0 ? 1 : -1;
-    fish1.style.left = x1 + "px";
-    fish1.style.top = waveY1 + "px";
-    fish1.style.transform = `scaleX(${flip1})`;
 
     // --- STYR FISK 2 ---
-    x2 += speed2;
-    if (x2 > window.innerWidth - 150 || x2 < 0) {
-        speed2 *= -1;
+    if (fish2) {
+        x2 += speed2;
+        if (x2 > window.innerWidth - 150 || x2 < 0) speed2 *= -1;
+        let waveY2 = y2 + Math.sin(x2 * 0.01) * 20;
+        fish2.style.left = x2 + "px";
+        fish2.style.top = waveY2 + "px";
+        fish2.style.transform = `scaleX(${speed2 > 0 ? 1 : -1})`;
     }
-    let waveY2 = y2 + Math.sin(x2 * 0.01) * 20; // Lidt anden bølge-rytme
-    
-    let flip2 = speed2 > 0 ? 1 : -1;
-    fish2.style.left = x2 + "px";
-    fish2.style.top = waveY2 + "px";
-    fish2.style.transform = `scaleX(${flip2})`;
+
+    // --- STYR KRABBEN ---
+    if (crab) {
+        crabX += crabSpeed;
+        if (crabX > window.innerWidth - 120 || crabX < 0) crabSpeed *= -1;
+        
+        // Lav en lille hoppende bevægelse (ben-løft)
+        crabStep += 0.1;
+        let lift = Math.abs(Math.sin(crabStep)) * 6;
+        
+        crab.style.left = crabX + "px";
+        // Vi bruger translateY til at få den til at hoppe lidt mens den går sidelæns
+        crab.style.transform = `scaleX(${crabSpeed > 0 ? 1 : -1}) translateY(${-lift}px)`;
+    }
 
     requestAnimationFrame(swim);
 }
 
-// Start festen!
+// Start alle dyrene
 swim();
 
 

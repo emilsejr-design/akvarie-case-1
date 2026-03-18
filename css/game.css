@@ -19,12 +19,8 @@ body, game.html {
 
 .background_move_around {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 300vw; 
-    height: 100vh;
     transition: transform 0.5s ease;
-    z-index: -1;   
+    display: flex; 
 }
 
 .viewport_layout {
@@ -80,12 +76,12 @@ body, game.html {
     width: 250px;
     height: 25px;
     background-color: #ddd;
-    border: 2px black;
+    border: 3px black;
     border-radius: 10px;
 }
 #progressBar {
     height: 100%;
-    width: 50%;
+    width: 0%;
     background-color: green;
     transition: width 0.3s;
 }
@@ -113,13 +109,22 @@ body, game.html {
     position: absolute;
     width: 150px;
     transition: transform 0.2s ease;
-    z-index: 0; /* Sørg for at de er foran baggrunden */
+    z-index: 0; 
     pointer-events: none; /* Så de ikke blokerer for klik på skrald */
 }
 
 #fish_1 { top: 50%; }
 #fish-2 { top: 20%; }
 
+#crab {
+    position: absolute;
+    width: 120px; 
+    /* Vi placerer den manuelt her for at tjekke om den dukker op */
+    bottom: 50px; 
+    left: 100px;
+    z-index: 999; /* Meget højt tal så den altid er forrest */
+    display: block !important; /* Tvinger den til at blive vist */
+}
 
 /* SEAWEED */
 #seaweed_1{
