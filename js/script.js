@@ -55,7 +55,7 @@ function removeTrash(trashElement){
 }
 
 
-
+//fisk svømmer
 const fish = document.getElementById("fish_1");
 let x = 0;
 let y = 300; // Start position i højden

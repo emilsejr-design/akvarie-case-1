@@ -12,12 +12,13 @@
     <div id="bubbleContainer"></div>
 
 <!-- PORGRESSBAR -->
-<div id="progressContainer"></div>
-<progress id="progressBar" value="0" max="100"></progress> <!-- OBS itvivl om "progress" virker eller om vi skal bruge div--> -->
+<div id="progressContainer">
+    <div id="progressBar" value="0" max="100"></div> 
+</div>
 
 <!-- NAVIGATIONSPILE -->
- <button id="leftButton">⬅️</button>
- <button id="rightBtn">➡️</button>
+ <button id="leftButton">‹</button>
+ <button id="rightButton">›</button>
 
 
 <div class="trash" onclick="removeTrash(this)"></div>
@@ -25,7 +26,7 @@
         <div class="trash" onclick="removeTrash(this)"></div>
     </div>
 
-<img src="img/plasticbag.img" class="trash" onclick="removeTrash(This) ">
+<img src="img/plasticbag.img" class="trash" onclick="removeTrash(this) ">
 
 <!-- BAGGRUNDEN -->
    <main class="background-container">
