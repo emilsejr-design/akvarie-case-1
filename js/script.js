@@ -18,12 +18,13 @@ function createBubble() {
     const bubble = document.createElement("div"); //Opret et nyt div-element, som bliver en boble
     bubble.classList.add("bubble"); //Tilføjer CSS-klassen "bubble", som styrer udseende og animation
 
-    // Giver dem random størrelse
-    const size = Math.random() * 20 + 10; 
-    bubble.style.width = size + "px";
-    bubble.style.height = size + "px";
+    // Giver dem random størrelse mellem 10px og 30px
+    const size = Math.random() * 20 + 10; //Genererer et tilfældigt tal mellem 0 og 1, som ganges med 20 og pluses med 10.
+    //Det forskyder intervallet fra 0-20 til 10-30, så "size" bliver tilfældig mellem 10-30px.
+    bubble.style.width = size + "px"; // Sæt bredde
+    bubble.style.height = size + "px"; // Sæt højde
 
-    // Giver dem random position
+    //Sæt boblens vandrette position tilfældigt inden for skærmbredden
     bubble.style.left = Math.random() * window.innerWidth + "px";
 
     // Så de stiger med random hastighed

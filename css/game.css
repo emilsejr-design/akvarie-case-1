@@ -54,9 +54,10 @@ body, game.html {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 200px;
-    height: 25px;
+    width: 300px;
+    height: 30px;
     background-color: #ddd;
+    border: 2px black;
     border-radius: 15px;
     overflow: hidden;
     z-index: 2;
@@ -79,10 +80,11 @@ body, game.html {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 60px;
+    font-size: 100px;
     padding: 10px;
     background: transparent;
-    border: none;
+    color: aquamarine;
+    border: 3px black;
     cursor: pointer;
     z-index: 2;
     transition: transform 0.3s
@@ -100,4 +102,13 @@ body, game.html {
     left: 0;
     transition: transform 0.2s ease;
     z-index: 0;
+}
+
+/* SEAWEED */
+#seaweed_1{
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 50%;
+    bottom: -40px;
 }
