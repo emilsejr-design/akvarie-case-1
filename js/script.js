@@ -43,7 +43,7 @@ setInterval(createBubble, 300);
 
 //LYD
 function playBubbleSound(){
-    let sound = new Audio("bubble.mp3");
+    let sound = new Audio("sfx-bubbles.mp3");
     sound.play();
     }
 
