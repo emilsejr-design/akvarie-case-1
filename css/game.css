@@ -70,21 +70,21 @@ body, game.html {
 }
 
 /* NAVIGATIONS KNAPPER */
-#leftButton {
-    left: 20px;
-}
-#rightButton {
-    right: 20px;
-}
+#leftButton {left: 20px;}
+#rightButton {right: 20px;}
+
 #leftButton, #rightButton {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
     font-size: 100px;
-    padding: 10px;
+    width: 120px;
+    height: 120px;
     background: transparent;
+    display: inline-block;
     color: aquamarine;
-    border: 3px black;
+    border: 3px solid black;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5), inset -1px -1px 3px rgba(255,255,255,0.3);
     cursor: pointer;
     z-index: 2;
     transition: transform 0.3s
