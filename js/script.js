@@ -187,10 +187,22 @@ function playGameNavigation(){
     let navSound = new Audio("mp3/navigation-vo.mp3");
     navSound.play();
     }
-    // Loader lyden når siden indlæses
-    window.onload = function() {
-        playGameNavigation();
+// LYD-SPILÅBNING
+function playIntroBubbles(){
+    let bubbleSound = new Audio("mp3/sfx-bubbles.mp3");
+    bubbleSound.play();
     }
+// LYD-UNDERVAND
+function playUnderwater() {
+    let underwaterSound = new Audio("mp3/underwater-sound.mp3");
+    underwaterSound.play();
+}
+// Loader lyden når siden indlæses
+window.onload = function() {
+    playGameNavigation();
+    playIntroBubbles();
+    playUnderwater();
+}
 
 
 //Slutningen af spilet 
