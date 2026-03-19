@@ -10,10 +10,19 @@ function updateProgressbar(){
     let popSound = new Audio("mp3/pop-normal.mp3");
     popSound.play();
 
+    if (score === 50) {
+    playHalfwaySound();
+    }
+
     if(score >= maxScore){  // Når spillet er færdigt
     endingPage();
     }
 }
+function playHalfwaySound(){
+    let halfwaySound = new Audio("mp3/halvvejs-vo.mp3");
+    halfwaySound.play();
+}
+
 
 //LAYOUT - Viewport
 let currentPosition = 0;
