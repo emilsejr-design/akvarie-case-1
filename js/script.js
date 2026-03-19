@@ -7,6 +7,8 @@ let maxScore = 100;
 function updateProgressbar(){
     let procent = (score / maxScore) * 100;
     document.getElementById("progressBar").style.width = procent + "%";
+    let popSound = new Audio("mp3/pop-normal.mp3");
+    popSound.play();
 
     if(score >= maxScore){  // Når spillet er færdigt
     visSlutside();
