@@ -159,8 +159,8 @@ body, game.html {
     width: 20%;
     z-index: 0;
     left: 60%;
-    bottom: -120px;
-    scale: 25%;
+    bottom: -190px;
+    scale: 20%;
 }
 
 #krus   {
@@ -170,7 +170,7 @@ body, game.html {
     left: 10%;
     bottom: -5px;
     scale: 30%;
- opacity: 0.5;
+    opacity: 0.5;
 }
 
 #skraldepose1 {
@@ -192,6 +192,16 @@ body, game.html {
     scale: 30%;
     opacity: 0.5;
 }
+#skraldepose3 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 60%;
+    bottom: -60px;
+    scale: 35%;
+    rotate: -70deg;
+    opacity: 0.5;
+}
 
 /* SEAWEED */
 #seaweed_1{
@@ -210,5 +220,3 @@ body, game.html {
     bottom: -375px;
     scale: 30%;
 }
-
-
