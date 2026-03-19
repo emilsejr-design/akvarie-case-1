@@ -106,7 +106,7 @@ body, game.html {
     }
 
 /* FISH */
-#fish_1, #fish-2, #fish-3 {
+#fish_1, #fish-2, #fish-3, #fish-4 {
     position: absolute;
     width: 150px;
     transition: transform 0.2s ease;
@@ -117,6 +117,7 @@ body, game.html {
 #fish_1 { top: 50%; }
 #fish-2 { top: 20%; }
 #fish-3 { top: 70%; }
+#fish-4 { top: 60%; }
 
 #crab {
     position: absolute;
