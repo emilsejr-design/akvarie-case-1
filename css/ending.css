@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font-size-small: 13px;
+    --font-size-base: 16px;
+    --font-size-medium: 18px;
+    --font-size-large: 20px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 28px;
+
+    --text-color: white;
+}
+
+.header{
+    position: relative;
+}
+
+.header img{
+    width:100%;
+    height:100vh;
+    object-fit:cover;
+}
+
+.title{
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    text-align:center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mission{
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header{
+  position: relative;
+}
+
+.start_game{
+    margin-top:30px;
+
+    border:solid;
+    border-color: #EE6352;
+    background-color: orange;
+    color: #EE6352;
+
+    border-radius:50px;
+    padding:20px 50px;
+
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+.start_game:hover{
+    transform: scale(1.1);
+}
+
+h1{
+    font-size: 80px;
+}
+
+.hero_fish{
+    position: absolute;
+    top: 20px;
+    right: 500px;
+    width: 1000px;
+    cursor: pointer;
+}
+
+.hero_fish:hover{
+    transform: scale(1.1);
+}
