@@ -106,7 +106,7 @@ body, game.html {
     }
 
 /* FISK */
-#fish_1, #fish-2 {
+#fish_1, #fish-2, #fish-3 {
     position: absolute;
     width: 150px;
     transition: transform 0.2s ease;
@@ -116,6 +116,7 @@ body, game.html {
 
 #fish_1 { top: 50%; }
 #fish-2 { top: 20%; }
+#fish-3 { top: 70%; }
 
 #crab {
     position: absolute;
@@ -150,8 +151,16 @@ body, game.html {
     width: 20%;
     z-index: 0;
     left: 10%;
-    bottom: -70px;
-    scale: 30%;
+    bottom: -300px;
+    scale: 15%;
+}
+#fish4 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 60%;
+    bottom: -190px;
+    scale: 20%;
 }
 
 #krus   {
@@ -161,7 +170,7 @@ body, game.html {
     left: 10%;
     bottom: -5px;
     scale: 30%;
- opacity: 0.5;
+    opacity: 0.5;
 }
 
 #skraldepose1 {
@@ -183,6 +192,16 @@ body, game.html {
     scale: 30%;
     opacity: 0.5;
 }
+#skraldepose3 {
+    position: absolute;
+    width: 20%;
+    z-index: 0;
+    left: 60%;
+    bottom: -60px;
+    scale: 35%;
+    rotate: -70deg;
+    opacity: 0.5;
+}
 
 /* SEAWEED */
 #seaweed_1{
@@ -201,5 +220,3 @@ body, game.html {
     bottom: -375px;
     scale: 30%;
 }
-
-
