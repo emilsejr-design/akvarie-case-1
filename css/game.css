@@ -98,7 +98,8 @@ body, game.html {
     font-size: 80px;
     background: transparent;
     z-index: 2;
-    transition: transform 0.3s
+    transition: transform 0.3s;
+    border: none;
 }
     /* Hover effekt */
     #leftButton:hover, #rightButton:hover{
