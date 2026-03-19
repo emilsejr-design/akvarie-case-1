@@ -66,6 +66,11 @@ function createBubble() {
 }
 // Lav mange bobler løbende
 setInterval(createBubble, 300);
+// BUBBLE LYD
+function playBubbleSound(){
+    let sound = new Audio("sfx-bubbles.mp3");
+    sound.play();
+    }
 
 // TRASH
 // henter skraldeposerne
@@ -167,6 +172,17 @@ function swim() {
 
 // Start animationen
 swim();
+
+// LYD-VOICEOVER
+function playGameNavigation(){
+    let navSound = new Audio("mp3/navigation-vo.mp3");
+    navSound.play();
+    }
+    // Loader lyden når siden indlæses
+    window.onload = function() {
+        playGameNavigation();
+    }
+
 
 //Slutningen af spilet 
 function endingPage(){
