@@ -15,7 +15,7 @@ function updateProgressbar(){
 
 //LAYOUT - Viewport
 let currentPosition = 0;
-const step = 200; // hvor mange pixels vi flytter pr klik
+const step = 250; // hvor mange pixels vi flytter pr klik
 const background = document.querySelector(".background_move_around");
 
 // Max/min grænser (så vi ikke rykker ud af baggrunden)
@@ -74,7 +74,7 @@ const skraldepose3 = document.getElementById("skraldepose3");
 // laver funktion der kan fjerne elementer og opdatere progressbar
 function fjernSkrald(e) {
     e.target.remove();
-    score += 20;
+    score += 25;
     updateProgressbar();
 }
 // ved klik på skraldeposerne køres funktionen der fjerner skrald
