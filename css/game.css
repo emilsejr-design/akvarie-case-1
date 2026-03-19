@@ -123,7 +123,7 @@ body, game.html {
     /* Vi placerer den manuelt her for at tjekke om den dukker op */
     bottom: 10%; 
     left: 20%;
-    z-index: 99; /* Meget højt tal så den altid er forrest */
+    z-index: 0; /* Meget højt tal så den altid er forrest */
     display: block !important; /* Tvinger den til at blive vist */
 }
 
@@ -190,7 +190,7 @@ body, game.html {
     width: 20%;
     z-index: 0;
     left: 50%;
-    bottom: -300px;
+    bottom: -400px;
     scale: 30%;
 }
 #seaweed_3{
@@ -198,7 +198,7 @@ body, game.html {
     width: 20%;
     z-index: 0;
     left: 10%;
-    bottom: -200px;
+    bottom: -375px;
     scale: 30%;
 }
 

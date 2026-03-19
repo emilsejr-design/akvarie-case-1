@@ -123,10 +123,15 @@ let crabSpeed = 1.2;
 let crabStep = 0;
 
 function swim() {
+    // Vi henter den aktuelle bredde af hele siden i hvert frame
+    const totalBredde = document.documentElement.scrollWidth;
+
     // --- STYR FISK 1 ---
     if (fish1) {
         x1 += speed1;
-        if (x1 > window.innerWidth - 150 || x1 < 0) speed1 *= -1;
+        // Tjekker om Fisk 1 rammer kanten
+        if (x1 > totalBredde - 150 || x1 < 0) speed1 *= -1;
+        
         let waveY1 = y1 + Math.sin(x1 * 0.02) * 30;
         fish1.style.left = x1 + "px";
         fish1.style.top = waveY1 + "px";
@@ -136,7 +141,9 @@ function swim() {
     // --- STYR FISK 2 ---
     if (fish2) {
         x2 += speed2;
-        if (x2 > window.innerWidth - 150 || x2 < 0) speed2 *= -1;
+        // RETTET: Bruger nu x2 og speed2 i stedet for x1
+        if (x2 > totalBredde - 150 || x2 < 0) speed2 *= -1;
+        
         let waveY2 = y2 + Math.sin(x2 * 0.01) * 20;
         fish2.style.left = x2 + "px";
         fish2.style.top = waveY2 + "px";
@@ -146,23 +153,21 @@ function swim() {
     // --- STYR KRABBEN ---
     if (crab) {
         crabX += crabSpeed;
-        if (crabX > window.innerWidth - 120 || crabX < 0) crabSpeed *= -1;
+        // RETTET: Bruger nu crabX og crabSpeed
+        if (crabX > totalBredde - 120 || crabX < 0) crabSpeed *= -1;
         
-        // Lav en lille hoppende bevægelse (ben-løft)
         crabStep += 0.1;
         let lift = Math.abs(Math.sin(crabStep)) * 6;
         
         crab.style.left = crabX + "px";
-        // Vi bruger translateY til at få den til at hoppe lidt mens den går sidelæns
-        crab.style.transform = `scaleX(${crabSpeed > 0 ? 1 : -1})`, `translateY(${-lift}px)`;
+        crab.style.transform = `scaleX(${crabSpeed > 0 ? 1 : -1}) translateY(${-lift}px)`;
     }
 
     requestAnimationFrame(swim);
 }
 
-// Start alle dyrene
+// Start animationen
 swim();
-
 
 
 //Slutningen af spilet 
