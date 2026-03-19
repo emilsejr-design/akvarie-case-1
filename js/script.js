@@ -84,6 +84,7 @@ function playBubbleSound(){
 // henter skraldeposerne
 const skraldepose1 = document.getElementById("skraldepose1");
 const skraldepose2 = document.getElementById("skraldepose2");
+const krus = document.getElementById("krus")
 // laver funktion der kan fjerne elementer og opdatere progressbar
 function fjernSkrald(e) {
     e.target.remove();
@@ -91,8 +92,9 @@ function fjernSkrald(e) {
     updateProgressbar();
 }
 // ved klik på skraldeposerne køres funktionen der fjerner skrald
-skraldepose1.addEventListener("click", fjernSkrald)
-skraldepose2.addEventListener("click", fjernSkrald)
+skraldepose1.addEventListener("click", fjernSkrald);
+skraldepose2.addEventListener("click", fjernSkrald);
+krus.addEventListener("click", fjernSkrald);
 
 
 
