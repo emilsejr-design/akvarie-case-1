@@ -11,13 +11,13 @@ function updateProgressbar(){
     popSound.play();
 
     if(score >= maxScore){  // Når spillet er færdigt
-    visSlutside();
+    endingPage();
     }
 }
 
 //LAYOUT - Viewport
 let currentPosition = 0;
-const step = 200; // hvor mange pixels vi flytter pr klik
+const step = 250; // hvor mange pixels vi flytter pr klik
 const background = document.querySelector(".background_move_around");
 
 // Max/min grænser (så vi ikke rykker ud af baggrunden)
@@ -76,7 +76,7 @@ const skraldepose3 = document.getElementById("skraldepose3");
 // laver funktion der kan fjerne elementer og opdatere progressbar
 function fjernSkrald(e) {
     e.target.remove();
-    score += 20;
+    score += 25;
     updateProgressbar();
 }
 // ved klik på skraldeposerne køres funktionen der fjerner skrald
@@ -162,16 +162,13 @@ function swim() {
         crab.style.left = crabX + "px";
         crab.style.transform = `scaleX(${crabSpeed > 0 ? 1 : -1}) translateY(${-lift}px)`;
     }
-
     requestAnimationFrame(swim);
 }
 
 // Start animationen
 swim();
 
-
 //Slutningen af spilet 
-function visSlutside(){
-    document.getElementById("slutTekst").innerText =
-    "Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.";
+function endingPage(){
+    window.location.href = "ending.html";
     }
