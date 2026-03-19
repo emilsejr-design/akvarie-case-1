@@ -86,19 +86,20 @@ skraldepose3.addEventListener("click", fjernSkrald);
 
 
 
-//KRABBE
 // --- FISK & KRABBE ANIMATION ---
 
 // 1. Hent elementerne
 const fish1 = document.getElementById("fish_1");
 const fish2 = document.getElementById("fish-2");
 const fish3 = document.getElementById("fish-3");
+const fish4 = document.getElementById("fish-4");
 const crab = document.getElementById("crab");
 
-// 2. Start-værdier
-let x1 = 0; let y1 = 300; let speed1 = 2;
+// 2. Start-værdier (RETTET: speed4 og x4/y4 værdier)
+let x1 = 0;   let y1 = 300; let speed1 = 2;
 let x2 = 100; let y2 = 150; let speed2 = -1.5;
 let x3 = 150; let y3 = 200; let speed3 = 3;
+let x4 = 180; let y4 = 450; let speed4 = 3.4; // Her stod speed3 før
 let crabX = 200; let crabSpeed = 1.2; let crabStep = 0;
 
 function swim() {
@@ -107,13 +108,8 @@ function swim() {
     // --- STYR FISK 1 ---
     if (fish1) {
         x1 += speed1;
-        if (x1 > totalBredde - 150) {
-            speed1 = -Math.abs(speed1);
-            x1 = totalBredde - 151;
-        } else if (x1 < 0) {
-            speed1 = Math.abs(speed1);
-            x1 = 1;
-        }
+        if (x1 > totalBredde - 150) { speed1 = -Math.abs(speed1); x1 = totalBredde - 151; } 
+        else if (x1 < 0) { speed1 = Math.abs(speed1); x1 = 1; }
         let waveY1 = y1 + Math.sin(x1 * 0.02) * 30;
         fish1.style.left = x1 + "px";
         fish1.style.top = waveY1 + "px";
@@ -123,13 +119,8 @@ function swim() {
     // --- STYR FISK 2 ---
     if (fish2) {
         x2 += speed2;
-        if (x2 > totalBredde - 150) {
-            speed2 = -Math.abs(speed2);
-            x2 = totalBredde - 151;
-        } else if (x2 < 0) {
-            speed2 = Math.abs(speed2);
-            x2 = 1;
-        }
+        if (x2 > totalBredde - 150) { speed2 = -Math.abs(speed2); x2 = totalBredde - 151; } 
+        else if (x2 < 0) { speed2 = Math.abs(speed2); x2 = 1; }
         let waveY2 = y2 + Math.sin(x2 * 0.01) * 20;
         fish2.style.left = x2 + "px";
         fish2.style.top = waveY2 + "px";
@@ -139,30 +130,31 @@ function swim() {
     // --- STYR FISK 3 ---
     if (fish3) {
         x3 += speed3;
-        if (x3 > totalBredde - 150) {
-            speed3 = -Math.abs(speed3);
-            x3 = totalBredde - 151;
-        } else if (x3 < 0) {
-            speed3 = Math.abs(speed3);
-            x3 = 1;
-        }
-        // RETTET: waveY3 var fejlagtigt navngivet waveY2 før
+        if (x3 > totalBredde - 150) { speed3 = -Math.abs(speed3); x3 = totalBredde - 151; } 
+        else if (x3 < 0) { speed3 = Math.abs(speed3); x3 = 1; }
         let waveY3 = y3 + Math.sin(x3 * 0.01) * 20; 
         fish3.style.left = x3 + "px";
         fish3.style.top = waveY3 + "px";
         fish3.style.transform = `scaleX(${speed3 > 0 ? 1 : -1})`;
     }
 
+    // --- STYR FISK 4 --- (RETTET: Bruger nu speed4 og waveY4 korrekt)
+    if (fish4) {
+        x4 += speed4;
+        if (x4 > totalBredde - 150) { speed4 = -Math.abs(speed4); x4 = totalBredde - 151; } 
+        else if (x4 < 0) { speed4 = Math.abs(speed4); x4 = 1; }
+        
+        let waveY4 = y4 + Math.sin(x4 * 0.015) * 25; 
+        fish4.style.left = x4 + "px";
+        fish4.style.top = waveY4 + "px";
+        fish4.style.transform = `scaleX(${speed4 > 0 ? 1 : -1})`;
+    }
+
     // --- STYR KRABBEN ---
     if (crab) {
         crabX += crabSpeed;
-        if (crabX > totalBredde - 120) {
-            crabSpeed = -Math.abs(crabSpeed);
-            crabX = totalBredde - 121;
-        } else if (crabX < 0) {
-            crabSpeed = Math.abs(crabSpeed);
-            crabX = 1;
-        }
+        if (crabX > totalBredde - 120) { crabSpeed = -Math.abs(crabSpeed); crabX = totalBredde - 121; } 
+        else if (crabX < 0) { crabSpeed = Math.abs(crabSpeed); crabX = 1; }
         crabStep += 0.1;
         let lift = Math.abs(Math.sin(crabStep)) * 6;
         crab.style.left = crabX + "px";
