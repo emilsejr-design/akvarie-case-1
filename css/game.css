@@ -182,7 +182,7 @@ body, game.html {
     width: 20%;
     z-index: 0;
     left: 80%;
-    bottom: -190px;
+    bottom: -320px;
     scale: 30%;
     rotate: 70deg;
     opacity: 0.5;
@@ -191,9 +191,10 @@ body, game.html {
     position: absolute;
     width: 20%;
     z-index: 0;
-    left: 30%;
-    bottom: -390px;
-    scale: 30%;
+    left: 29%;
+    bottom: -550px;
+    scale: 20%;
+    rotate: -40deg;
     opacity: 0.5;
 }
 #skraldepose3 {
@@ -230,7 +231,7 @@ body, game.html {
     position: absolute;
     width: 20%;
     z-index: 0;
-    left: 10%;
-    bottom: -375px;
+    left: 1%;
+    bottom: -360px;
     scale: 30%;
 }
