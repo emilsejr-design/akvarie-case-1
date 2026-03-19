@@ -13,3 +13,5 @@ function playBubbleSound(){
         heroFishSpeak.play();
     }
     addEventListener("click", playSoundHeroFish);
+
+    
