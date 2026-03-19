@@ -1,7 +1,7 @@
 //LYD
-function playBubbleSound(){
-    let sound = new Audio("");
-    sound.play();
+window.onload = function playEndingSound(){
+    let endingSound = new Audio("mp3/ending-vo.mp3");
+    endingSound.play();
     }
 
     // Lyd på FortællerFisken på forsiden
