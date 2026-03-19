@@ -15,7 +15,7 @@ function updateProgressbar(){
     }
 
     if(score >= maxScore){  // Når spillet er færdigt
-    visSlutside();
+    endingPage();
     }
 }
 function playHalfwaySound(){
@@ -176,7 +176,6 @@ function swim() {
         crab.style.left = crabX + "px";
         crab.style.transform = `scaleX(${crabSpeed > 0 ? 1 : -1}) translateY(${-lift}px)`;
     }
-
     requestAnimationFrame(swim);
 }
 
@@ -195,7 +194,6 @@ function playGameNavigation(){
 
 
 //Slutningen af spilet 
-function visSlutside(){
-    document.getElementById("slutTekst").innerText =
-    "Tak fordi du hjalp! Havet bliver sundere når vi fjerner skrald.";
+function endingPage(){
+    window.location.href = "ending.html";
     }
