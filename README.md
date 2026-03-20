@@ -24,3 +24,11 @@ JS
 
 
 ## Oliver
+ending.html - Redigeret om i den så den er anderledes fra index.html
+- Redigering i knap
+- Redigering i p
+
+ending.css
+
+JS
+-Fisk
