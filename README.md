@@ -17,7 +17,13 @@ animerede fisk
 JS
 -Fisk og Krabbe animatoin
 
-## Sigrid
+## Sigrid har lavet:
+js kode + css styling af boblerne i spillet - linje 40-66 inde i script.js. + game.css
+js kode + css styling af "LAYOUT - viewport" - linje 16-34 inde i script.js. + game.css
+js kode + css styling af progressbaren - linje 1-14 i script.js + game.css
+css styling af "Navigations knapperne" - linje 89-114 i script.js + game.css
+Skriv til Case 2
+
 
 
 ## Katrine
