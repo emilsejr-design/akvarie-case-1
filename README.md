@@ -15,7 +15,7 @@ animerede fisk
 -baggrunden 
 -seaweed
 JS
--Fisk og Krabbe animatoin
+-Fisk og Krabbe animation
 
 ## Sigrid
 
