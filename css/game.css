@@ -235,11 +235,3 @@ body, script.html {
     bottom: -360px;
     scale: 30%;
 }
-#seaweedKatrine {
-    position: absolute;
-    width: 20%;
-    z-index: 0;
-    left: 23%;
-    bottom: -600px;
-    scale: 30%;
-}
