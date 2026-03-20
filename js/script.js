@@ -154,7 +154,7 @@ function swim() {
         fish3.style.transform = `scaleX(${speed3 > 0 ? 1 : -1})`;
     }
 
-    // --- STYR FISK 4 --- (RETTET: Bruger nu speed4 og waveY4 korrekt)
+    // --- STYR FISK 4 --- 
     if (fish4) {
         x4 += speed4;
         if (x4 > totalBredde - 150) { speed4 = -Math.abs(speed4); x4 = totalBredde - 151; } 

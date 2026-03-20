@@ -77,3 +77,19 @@ h1{
 .hero_fish:hover{
     transform: scale(1.1);
 }
+
+.click{
+ 
+    position:absolute;
+    left: -50%;
+    bottom: -60%;
+    border:solid;
+    border-color: hsl(7, 82%, 63%);
+    background-color: orange;
+    color: #EE6352;
+
+    border-radius:50px;
+    padding:20px 50px;
+    font-size:1.5rem;
+    cursor:pointer;
+}
