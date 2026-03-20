@@ -130,7 +130,7 @@ body, script.html {
 }
 
 /* FISH W TRASH */
-#fish1 {
+#emils-fish {
     position: absolute;
     width: 20%;
     z-index: 0;
@@ -138,7 +138,7 @@ body, script.html {
     bottom: -120px;
     scale: 30%;
 }
-#fish2 {
+#sigrids-fish {
     position: absolute;
     width: 20%;
     z-index: 0;
@@ -147,7 +147,7 @@ body, script.html {
     scale: 30%;
 }
 
-#fish3 {
+#katrines-fish {
     position: absolute;
     width: 20%;
     z-index: 0;
@@ -155,7 +155,7 @@ body, script.html {
     bottom: -300px;
     scale: 15%;
 }
-#fish4 {
+#olivers-fish {
     position: absolute;
     width: 20%;
     z-index: 0;
