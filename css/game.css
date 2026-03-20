@@ -112,7 +112,7 @@ body, script.html {
     width: 150px;
     transition: transform 0.2s ease;
     z-index: 0; 
-    pointer-events: none; /* Så de ikke blokerer for klik på skrald */
+    pointer-events: none; 
 }
 
 #fish_1 { top: 50%; }
@@ -123,11 +123,10 @@ body, script.html {
 #crab {
     position: absolute;
     width: 120px; 
-    /* Vi placerer den manuelt her for at tjekke om den dukker op */
     bottom: 10%; 
     left: 20%;
-    z-index: 0; /* Meget højt tal så den altid er forrest */
-    display: block !important; /* Tvinger den til at blive vist */
+    z-index: 0; 
+    display: block !important; 
 }
 
 /* FISH W TRASH */
